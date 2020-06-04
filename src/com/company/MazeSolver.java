@@ -27,6 +27,7 @@ public class MazeSolver {
 
 
         while (true) {
+            // Peek gives the first element in the list
             int y = path.peek().y;
             int x = path.peek().x;
             maze[y][x] = 0;
@@ -80,7 +81,7 @@ public class MazeSolver {
                     continue;
                 }
             }
-
+            //picks the first element in a stack and removes
             path.pop();
             System.out.println("Moved back");
             if (path.size() <= 0) {
@@ -91,10 +92,7 @@ public class MazeSolver {
 
     }
     public boolean isValid(int y, int x) {
-        if(y< 0 ||
-           y >= maze.length ||
-           x < 0 ||
-           x>= maze[y].length)
+        if(y< 0 || y >= maze.length || x < 0 || x>= maze[y].length)
         {
             return false;
         }
